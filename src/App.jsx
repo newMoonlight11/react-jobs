@@ -7,8 +7,16 @@ import {
 
 import React from "react";
 import HomePage from './pages/HomePage';
+import MainLayout from "./pages/MainLayout";
+import JobsPage from "./pages/JobsPage";
+
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route index element={<HomePage/>} />)
+  createRoutesFromElements(
+  <Route path="/" element={<MainLayout/>}>
+    <Route index element={<HomePage/>} />
+    <Route path="/jobs" element={<JobsPage/>}/>
+  </Route>
+  )
 );
 
 const App = () => {
