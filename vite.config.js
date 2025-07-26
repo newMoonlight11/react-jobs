@@ -14,5 +14,9 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
+    watch: {
+      // ignora recargas cuando jobs.json cambie
+      ignored: ['**/src/jobs.json'],
+    },
   },
 });
